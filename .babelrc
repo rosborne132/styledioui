@@ -1,1 +1,6 @@
-{ “presets” : [[ “react-app”,{ “absoluteRuntime”:false }]]}
+{
+    "presets": [
+        "@babel/preset-es2016",
+        ["react-app", { "absoluteRuntime": false }]
+    ]
+}
