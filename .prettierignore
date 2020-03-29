@@ -1,3 +1,4 @@
 /.now
-/storybook-static/*
 /build
+/dist
+/storybook-static

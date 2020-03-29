@@ -7,8 +7,6 @@ export default {
     component: Button
 }
 
-export const Text = () => <Button buttonText="Test Button" />
-
-export const Emoji = () => (
-    <Button buttonText="😀 😎 👍 💯" onClick={action('clicked')} />
+export const TestButton = () => (
+    <Button buttonText="Test Button" onClick={action('clicked')} />
 )
