@@ -1,41 +1,32 @@
-'use strict'
+"use strict";
 
-var _interopRequireWildcard = require('@babel/runtime/helpers/interopRequireWildcard')
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
 
-Object.defineProperty(exports, '__esModule', {
-    value: true
-})
-exports['default'] = void 0
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-var React = _interopRequireWildcard(require('react'))
+var React = _interopRequireWildcard(require("react"));
 
 function SvgZoomOut(props) {
-    return /*#__PURE__*/ React.createElement(
-        'svg',
-        Object.assign(
-            {
-                width: 24,
-                height: 24,
-                fill: 'none',
-                stroke: 'currentColor',
-                strokeWidth: 2,
-                strokeLinecap: 'round',
-                strokeLinejoin: 'round',
-                className:
-                    'zoom-out_svg__feather zoom-out_svg__feather-zoom-out'
-            },
-            props
-        ),
-        /*#__PURE__*/ React.createElement('circle', {
-            cx: 11,
-            cy: 11,
-            r: 8
-        }),
-        /*#__PURE__*/ React.createElement('path', {
-            d: 'M21 21l-4.35-4.35M8 11h6'
-        })
-    )
+  return /*#__PURE__*/React.createElement("svg", Object.assign({
+    width: 24,
+    height: 24,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: "zoom-out_svg__feather zoom-out_svg__feather-zoom-out"
+  }, props), /*#__PURE__*/React.createElement("circle", {
+    cx: 11,
+    cy: 11,
+    r: 8
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "M21 21l-4.35-4.35M8 11h6"
+  }));
 }
 
-var _default = SvgZoomOut
-exports['default'] = _default
+var _default = SvgZoomOut;
+exports["default"] = _default;

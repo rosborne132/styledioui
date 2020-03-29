@@ -1,37 +1,28 @@
-'use strict'
+"use strict";
 
-var _interopRequireWildcard = require('@babel/runtime/helpers/interopRequireWildcard')
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
 
-Object.defineProperty(exports, '__esModule', {
-    value: true
-})
-exports['default'] = void 0
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-var React = _interopRequireWildcard(require('react'))
+var React = _interopRequireWildcard(require("react"));
 
 function SvgMessageCircle(props) {
-    return /*#__PURE__*/ React.createElement(
-        'svg',
-        Object.assign(
-            {
-                width: 24,
-                height: 24,
-                fill: 'none',
-                stroke: 'currentColor',
-                strokeWidth: 2,
-                strokeLinecap: 'round',
-                strokeLinejoin: 'round',
-                className:
-                    'message-circle_svg__feather message-circle_svg__feather-message-circle'
-            },
-            props
-        ),
-        /*#__PURE__*/ React.createElement('path', {
-            d:
-                'M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z'
-        })
-    )
+  return /*#__PURE__*/React.createElement("svg", Object.assign({
+    width: 24,
+    height: 24,
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: "message-circle_svg__feather message-circle_svg__feather-message-circle"
+  }, props), /*#__PURE__*/React.createElement("path", {
+    d: "M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"
+  }));
 }
 
-var _default = SvgMessageCircle
-exports['default'] = _default
+var _default = SvgMessageCircle;
+exports["default"] = _default;
