@@ -1,5 +1,5 @@
 import React from 'react'
-import { Facebook, Github, Instagram, Twitter } from '../Icon'
+import { Facebook, Github, Twitter } from '.'
 
 export default {
     title: 'Icon',
@@ -10,7 +10,6 @@ export const Social = () => (
     <>
         <Facebook />
         <Github />
-        <Instagram />
         <Twitter />
     </>
 )

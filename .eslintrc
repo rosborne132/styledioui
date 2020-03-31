@@ -4,18 +4,11 @@
         "es6": true,
         "jest": true
     },
-    "extends": [
-        "airbnb",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier",
-        "prettier/@typescript-eslint"
-      ],
+    "extends": ["airbnb", "plugin:react/recommended", "prettier"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2018,
         "sourceType": "module",
@@ -24,7 +17,7 @@
         },
         "project": "./tsconfig.json"
     },
-    "plugins": ["react", "react-hooks", "@typescript-eslint"],
+    "plugins": ["react", "react-hooks"],
     "rules": {
         "consistent-return": "off",
         "jsx-a11y/anchor-is-valid": "off",
@@ -51,9 +44,13 @@
         "no-restricted-syntax": ["warn", "ForOfStatement"],
         "no-unused-vars": "off",
         "padding-line-between-statements": [
-          "warn",
-          { "blankLine": "always", "prev": "block-like", "next": "*" },
-          { "blankLine": "always", "prev": "multiline-expression", "next": "*" }
+            "warn",
+            { "blankLine": "always", "prev": "block-like", "next": "*" },
+            {
+                "blankLine": "always",
+                "prev": "multiline-expression",
+                "next": "*"
+            }
         ],
         "prefer-const": "warn",
         "sort-keys": "warn",
@@ -77,45 +74,6 @@
         "react/sort-prop-types": "warn",
         "react/style-prop-object": "warn",
         "react-hooks/exhaustive-deps": "warn",
-        "react-hooks/rules-of-hooks": "warn",
-        "@typescript-eslint/array-type": "warn",
-        "@typescript-eslint/camelcase": "warn",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/explicit-member-accessibility": "off",
-        "@typescript-eslint/interface-name-prefix": ["warn", "always"],
-        "@typescript-eslint/consistent-type-assertions": [
-          "warn",
-          {
-            "assertionStyle": "as",
-            "objectLiteralTypeAssertions": "allow-as-parameter"
-          }
-        ],
-        "@typescript-eslint/no-non-null-assertion": "warn",
-        "@typescript-eslint/no-parameter-properties": "off",
-        "@typescript-eslint/no-unused-vars": [
-          "warn",
-          { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
-        ],
-        "@typescript-eslint/no-use-before-define": "warn",
-        "@typescript-eslint/consistent-type-definitions": "off"
-    },
-    "overrides": [
-        {
-          "files": ["*.spec.tsx", "*.spec.ts"],
-          "rules": {
-            "sort-keys": "off",
-    
-            "@typescript-eslint/camelcase": "off",
-            "@typescript-eslint/no-explicit-any": "off",
-            "@typescript-eslint/no-non-null-assertion": "off",
-            "@typescript-eslint/consistent-type-assertions": "off"
-          }
-        },
-        {
-          "files": ["*.service.ts"],
-          "rules": {
-            "sort-keys": "off"
-          }
-        }
-      ]
+        "react-hooks/rules-of-hooks": "warn"
+    }
 }
