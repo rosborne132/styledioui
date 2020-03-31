@@ -1,6 +1,6 @@
 {
     "name": "styledoui",
-    "version": "0.1.1",
+    "version": "0.1.0",
     "author": "Robert Osborne",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -14,7 +14,7 @@
         "eject": "react-scripts eject",
         "icons:generate": "npx @svgr/cli src/assets/icons/svg --out-dir src/lib/Elements/Icon",
         "package:publish": "npm run build && npm publish --access public",
-        "storybook:publish": "npm run build-storybook && now",
+        "storybook:publish": "npm run build-storybook && now --prod",
         "storybook": "start-storybook -p 9009 -s public",
         "test": "react-scripts test"
     },

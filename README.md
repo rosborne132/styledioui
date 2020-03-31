@@ -19,7 +19,7 @@ npm run storybook
 Run the command below to build and publish a new verison of the library
 
 ```
-npm run deploy:package
+npm run package:publish
 ```
 
 ### Publish Demo Site
