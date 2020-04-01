@@ -17,5 +17,9 @@ jobs:
                       - node_modules
                   key: v1-dependencies-{{ checksum "package.json" }}
             - run: npm run test
-            # - run: npm run package:publish
-            - run: npm run storybook:publish
+            - run:
+                  name: Publish to NPM
+                  command: |
+                      npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+                      npm publish
+            # - run: npm run storybook:publish
