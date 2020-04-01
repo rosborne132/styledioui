@@ -1,12 +1,11 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
-import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { Button } from './Button'
 
 export default {
     component: Button,
-    decorators: [withA11y, withKnobs],
+    decorators: [withKnobs],
     title: 'Button'
 }
 
