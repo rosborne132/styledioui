@@ -1,6 +1,4 @@
-import { Button } from './Elements/Button/Button'
-import { Facebook, Github, Twitter } from './Elements/Icon'
-
-const Icons = { Facebook, Github, Twitter }
+import { Button } from './Elements/Buttons/Button'
+import { Icons } from './Elements/Icons/Icons'
 
 export { Button, Icons }

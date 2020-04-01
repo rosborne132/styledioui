@@ -5,17 +5,20 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.TestButton = exports["default"] = void 0;
+exports.inaccessible = exports.TestButton = exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 var _addonActions = require("@storybook/addon-actions");
 
+var _addonA11y = require("@storybook/addon-a11y");
+
 var _Button = require("./Button");
 
 var _default = {
-  title: 'Button',
-  component: _Button.Button
+  component: _Button.Button,
+  decorators: [_addonA11y.withA11y],
+  title: 'Button'
 };
 exports["default"] = _default;
 
@@ -27,3 +30,14 @@ var TestButton = function TestButton() {
 };
 
 exports.TestButton = TestButton;
+
+var inaccessible = function inaccessible() {
+  return /*#__PURE__*/_react["default"].createElement("button", {
+    style: {
+      backgroundColor: 'red',
+      color: 'darkRed'
+    }
+  }, "Inaccessible button");
+};
+
+exports.inaccessible = inaccessible;

@@ -11,7 +11,6 @@
     "scripts": {
         "build-storybook": "build-storybook -c .storybook -o build",
         "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,test.js,stories.js",
-        "eject": "react-scripts eject",
         "icons:generate": "npx @svgr/cli src/assets/icons/svg --out-dir src/lib/Elements/Icon",
         "package:publish": "npm run build && npm publish --access public",
         "storybook:publish": "npm run build-storybook && now --prod",
@@ -21,7 +20,10 @@
     "dependencies": {
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
-        "@testing-library/user-event": "^7.1.2"
+        "@testing-library/user-event": "^7.1.2",
+        "polished": "^3.5.1",
+        "prop-types": "^15.7.2",
+        "styled-components": "^5.0.1"
     },
     "devDependencies": {
         "@babel/cli": "^7.0.0",
@@ -29,7 +31,9 @@
         "@babel/preset-env": "^7.9.0",
         "@storybook/addon-a11y": "^5.3.17",
         "@storybook/addon-actions": "^5.3.17",
+        "@storybook/addon-knobs": "^5.3.18",
         "@storybook/addon-links": "^5.3.17",
+        "@storybook/addon-storysource": "^5.3.18",
         "@storybook/addons": "^5.3.17",
         "@storybook/preset-create-react-app": "^2.1.1",
         "@storybook/react": "^5.3.17",
