@@ -25,7 +25,6 @@ jobs:
                   command: npm run test
     deploy:
         <<: *defaults
-        type: approval
         steps:
             - checkout
             - restore_cache:
