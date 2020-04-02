@@ -10,8 +10,8 @@ jobs:
                   keys:
                       - v1-dependencies-{{ checksum "package.json" }}
                       - v1-dependencies-
-            - run: npm install now
-            - run: now -t ${NOW_TOKEN}
+            - run: sudo npm install --global --unsafe-perm now
+            - run: now -t $NOW_TOKEN
             - run: npm install
             - save_cache:
                   paths:
