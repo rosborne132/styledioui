@@ -13,9 +13,6 @@ jobs:
                   keys:
                       - v1-dependencies-{{ checksum "package.json" }}
                       - v1-dependencies-
-            - run: sudo npm install --global --unsafe-perm now
-            # - run: now --token=$NOW_TOKEN --scope=rosborne
-            # - run: now --token $NOW_TOKEN --scope rosborne
             - run: npm install
             - save_cache:
                   paths:
@@ -39,11 +36,8 @@ jobs:
         requires:
             - build
         steps:
-            # - run:
-            #       name: Publish to NPM
-            #       command: |
-            #           npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            #           npm publish
             - run:
-                  name: Publish Storybook Prod
-                  command: npm run storybook:publish:prod
+                  name: Publish to NPM
+                  command: |
+                      npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+                      npm publish
