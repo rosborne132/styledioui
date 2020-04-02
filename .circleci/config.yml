@@ -14,7 +14,8 @@ jobs:
                       - v1-dependencies-{{ checksum "package.json" }}
                       - v1-dependencies-
             - run: sudo npm install --global --unsafe-perm now
-            - run: now --token $NOW_TOKEN --team=rosborne
+            # - run: now --token=$NOW_TOKEN --scope=rosborne
+            - run: now switch rosborne --token=$NOW_TOKEN
             - run: npm install
             - save_cache:
                   paths:
