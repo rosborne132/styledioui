@@ -10,12 +10,8 @@ jobs:
                   keys:
                       - v1-dependencies-{{ checksum "package.json" }}
                       - v1-dependencies-
-            - run:
-                  name: Setup Zeit Now
-                  command: |
-                      npm install now
-                      now -t ${NOW_TOKEN}
-
+            - run: npm install now
+            - run: now -t ${NOW_TOKEN}
             - run: npm install
             - save_cache:
                   paths:
