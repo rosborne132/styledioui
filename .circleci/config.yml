@@ -26,6 +26,18 @@ jobs:
     deploy:
         <<: *defaults
         steps:
+            - checkout
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "package.json" }}
+                      - v1-dependencies-
+            - run:
+                  name: Install Dependencies
+                  command: npm install
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "package.json" }}
             - run:
                   name: Publish to NPM
                   command: |
@@ -35,10 +47,10 @@ jobs:
 workflows:
     version: 2
 
-    continuous-delivery-workflow:
+    cd-pipeline:
         jobs:
             - build
             - deploy:
                   type: approval
-                  # requires:
-                  #     - build
+                  requires:
+                      - build
