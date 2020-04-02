@@ -35,3 +35,17 @@ jobs:
                   command: |
                       npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
                       npm publish
+
+workflows:
+    version: 2
+
+    continuous-delivery-workflow:
+        jobs:
+            - build
+            - deploy:
+                  type: approval
+                  requires:
+                      - build
+                  filters:
+                      branches:
+                          only: master
