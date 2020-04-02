@@ -13,7 +13,8 @@
         "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __snapshots__,test.js,stories.js",
         "icons:generate": "npx @svgr/cli src/assets/icons/svg --out-dir src/lib/Elements/Icon",
         "package:publish": "npm run build && npm publish --access public",
-        "storybook:publish": "npm run build-storybook && now --prod",
+        "storybook:publish": "npm run build-storybook && now",
+        "storybook:publish:prod": "npm run build-storybook && now --prod",
         "storybook": "start-storybook -p 9009 -s public",
         "test": "react-scripts test"
     },
