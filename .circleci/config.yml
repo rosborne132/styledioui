@@ -51,6 +51,10 @@ workflows:
     cd-pipeline:
         jobs:
             - build
-            - deploy:
+            - hold-for-approval:
+                  type: approval
                   requires:
                       - build
+            - deploy:
+                  requires:
+                      - hold-for-approval
