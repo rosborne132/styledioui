@@ -13,8 +13,8 @@ jobs:
             - run:
                   name: Setup Zeit Now
                   command: |
-                      now -t ${NOW_TOKEN}
                       npm install now
+                      now -t ${NOW_TOKEN}
 
             - run: npm install
             - save_cache:
