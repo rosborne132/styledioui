@@ -15,7 +15,7 @@ jobs:
                       - v1-dependencies-
             - run: sudo npm install --global --unsafe-perm now
             # - run: now --token=$NOW_TOKEN --scope=rosborne
-            - run: now --token $NOW_TOKEN --scope rosborne
+            # - run: now --token $NOW_TOKEN --scope rosborne
             - run: npm install
             - save_cache:
                   paths:
@@ -24,7 +24,9 @@ jobs:
             - run: npm run test
             - run:
                   name: Publish Storybook Dev
-                  command: npm run storybook:publish
+                  command: |
+                      npm run build-storybook
+                      now -t ${NOW_TOKEN} --prod
             # - run:
             #       name: Publish to NPM
             #       command: |
