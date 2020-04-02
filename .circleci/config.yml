@@ -13,23 +13,17 @@ jobs:
                   keys:
                       - v1-dependencies-{{ checksum "package.json" }}
                       - v1-dependencies-
-            - run: npm install
+            - run:
+                  name: Install Dependencies
+                  command: npm install
             - save_cache:
                   paths:
                       - node_modules
                   key: v1-dependencies-{{ checksum "package.json" }}
             - run: npm run test
             - run:
-                  name: Publish Storybook Dev
-                  command: |
-                      npm run build-storybook
-                      now -t ${NOW_TOKEN} --prod
-            # - run:
-            #       name: Publish to NPM
-            #       command: |
-            #           npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            #           npm publish
-            # - run: npm run storybook:publish
+                  name: Run Tests
+                  command: npm run test
     deploy:
         <<: *defaults
         type: approval
