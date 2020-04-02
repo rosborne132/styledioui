@@ -4,9 +4,12 @@ import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { Button } from './Button'
 
 export default {
-    component: Button,
-    decorators: [withKnobs],
-    title: 'Button'
+    title: 'Design System|Button',
+    parameters: {
+        component: Button,
+        componentSubtitle: 'Creates a reusable button component.',
+        decorators: [withKnobs]
+    }
 }
 
 export const TestButton = () => (
