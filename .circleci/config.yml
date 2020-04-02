@@ -25,6 +25,9 @@ jobs:
                   command: npm run test
     deploy:
         <<: *defaults
+        type: approval
+        requires:
+            - build
         steps:
             - checkout
             - restore_cache:
@@ -50,7 +53,4 @@ workflows:
     cd-pipeline:
         jobs:
             - build
-            - deploy:
-                  type: approval
-                  requires:
-                      - build
+            - deploy
