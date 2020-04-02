@@ -32,6 +32,9 @@ jobs:
             #           npm publish
             # - run: npm run storybook:publish
     deploy:
+        docker:
+            - image: circleci/node:10.13
+        working_directory: ~/repo
         type: approval
         requires:
             - build
