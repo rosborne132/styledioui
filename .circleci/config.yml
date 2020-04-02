@@ -26,9 +26,6 @@ jobs:
                   command: npm run test
     deploy:
         <<: *defaults
-        type: approval
-        requires:
-            - build
         steps:
             - run:
                   name: Publish to NPM
@@ -46,6 +43,3 @@ workflows:
                   type: approval
                   requires:
                       - build
-                  filters:
-                      branches:
-                          only: master
