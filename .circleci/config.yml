@@ -26,8 +26,6 @@ jobs:
     deploy:
         <<: *defaults
         type: approval
-        requires:
-            - build
         steps:
             - checkout
             - restore_cache:
@@ -53,4 +51,6 @@ workflows:
     cd-pipeline:
         jobs:
             - build
-            - deploy
+            - deploy:
+              requires:
+                  - build
