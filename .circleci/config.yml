@@ -23,31 +23,31 @@ jobs:
             - run:
                   name: Run Tests
                   command: npm run test
-    deploy:
-        <<: *defaults
-        steps:
-            - checkout
-            - restore_cache:
-                  keys:
-                      - v1-dependencies-{{ checksum "package.json" }}
-                      - v1-dependencies-
-            - run:
-                  name: Install Dependencies
-                  command: npm install
-            - save_cache:
-                  paths:
-                      - node_modules
-                  key: v1-dependencies-{{ checksum "package.json" }}
-            - run:
-                  name: Publish to NPM
-                  command: |
-                      npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-                      npm publish
             - run: |
                   if [ $CIRCLE_BRANCH = "master" ]
                   then
                       npm run release
                   fi
+    # deploy:
+    #     <<: *defaults
+    #     steps:
+    #         - checkout
+    #         - restore_cache:
+    #               keys:
+    #                   - v1-dependencies-{{ checksum "package.json" }}
+    #                   - v1-dependencies-
+    #         - run:
+    #               name: Install Dependencies
+    #               command: npm install
+    #         - save_cache:
+    #               paths:
+    #                   - node_modules
+    #               key: v1-dependencies-{{ checksum "package.json" }}
+    #         - run:
+    #               name: Publish to NPM
+    #               command: |
+    #                   npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+    #                   npm publish
 
 workflows:
     version: 2
@@ -55,10 +55,10 @@ workflows:
     cd-pipeline:
         jobs:
             - build
-            - hold-for-approval:
-                  type: approval
-                  requires:
-                      - build
-            - deploy:
-                  requires:
-                      - hold-for-approval
+            # - hold-for-approval:
+            #       type: approval
+            #       requires:
+            #           - build
+            # - deploy:
+            #       requires:
+            #           - hold-for-approval
