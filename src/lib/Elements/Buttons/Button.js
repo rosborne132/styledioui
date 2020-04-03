@@ -18,7 +18,7 @@ Button.propTypes = {
     /**
       Styles that override the default button component styles.
       */
-    buttonStyles: PropTypes.string,
+    buttonStyles: PropTypes.shape({}),
     /**
       Text that is displayed on the button.
       */
