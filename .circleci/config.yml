@@ -1,11 +1,12 @@
+version: 2
+
 defaults: &defaults
+    working_directory: ~/repo
     docker:
         - image: circleci/node:10.13
-    working_directory: ~/repo
 
-version: 2
 jobs:
-    build:
+    build-and-test:
         <<: *defaults
         steps:
             - checkout
@@ -23,43 +24,31 @@ jobs:
             - run:
                   name: Run Tests
                   command: npm run test
-            # - run: |
-            #       if [ $CIRCLE_BRANCH = "master" ]
-            #       then
-            #           npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            #           npm run release
-            #       fi
-    # deploy:
-    #     <<: *defaults
-    #     steps:
-    #         - checkout
-    #         - restore_cache:
-    #               keys:
-    #                   - v1-dependencies-{{ checksum "package.json" }}
-    #                   - v1-dependencies-
-    #         - run:
-    #               name: Install Dependencies
-    #               command: npm install
-    #         - save_cache:
-    #               paths:
-    #                   - node_modules
-    #               key: v1-dependencies-{{ checksum "package.json" }}
-    #         - run:
-    #               name: Publish to NPM
-    #               command: |
-    #                   npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-    #                   npm publish
+            - persist_to_workspace:
+                  root: ~/repo
+                  paths: .
+    deploy:
+        <<: *defaults
+        steps:
+            - attach_workspace:
+                  at: ~/repo
+            - run:
+                  name: Authenticate with registry
+                  command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+            - run:
+                  name: Publish Package
+                  command: npm publish --access public
 
 workflows:
     version: 2
 
     cd-pipeline:
         jobs:
-            - build
-            # - hold-for-approval:
-            #       type: approval
-            #       requires:
-            #           - build
-            # - deploy:
-            #       requires:
-            #           - hold-for-approval
+            - build-and-test
+            - hold-for-approval:
+                  type: approval
+                  requires:
+                      - build-and-test
+            - deploy:
+                  requires:
+                      - hold-for-approval

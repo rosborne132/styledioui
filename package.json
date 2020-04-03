@@ -9,7 +9,6 @@
         "build-storybook": "build-storybook -c .storybook -o build",
         "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore test.js,stories.js,stories.mdx",
         "package:publish": "npm run build && npm publish --access public",
-        "release": "auto shipit",
         "storybook": "start-storybook -p 9009 -s public",
         "test": "react-scripts test"
     },
@@ -63,6 +62,11 @@
     "babel": {
         "presets": [
             "react-app"
+        ]
+    },
+    "auto": {
+        "plugins": [
+            "npm"
         ]
     }
 }
