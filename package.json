@@ -11,6 +11,7 @@
     "scripts": {
         "build-storybook-docs": "build-storybook -s public --docs",
         "build-storybook": "build-storybook -c .storybook -o build",
+        "build:package": "cross-env BABEL_ENV=production babel src/lib -d dist",
         "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __snapshots__,test.js,stories.js",
         "icons:generate": "npx @svgr/cli src/assets/icons/svg --out-dir src/lib/Elements/Icon",
         "package:publish": "npm run build && npm publish --access public",
@@ -42,6 +43,7 @@
         "@storybook/react": "^5.3.17",
         "@svgr/cli": "^5.3.0",
         "@testing-library/react": "^9.5.0",
+        "auto": "^9.24.0",
         "eslint": "^6.2.2",
         "eslint-config-airbnb": "^18.0.1",
         "eslint-config-prettier": "^6.1.0",
@@ -70,5 +72,10 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/rosborne132/styledioui"
+    },
+    "babel": {
+        "presets": [
+            "react-app"
+        ]
     }
 }
