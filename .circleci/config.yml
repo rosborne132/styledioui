@@ -43,6 +43,11 @@ jobs:
                   command: |
                       npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
                       npm publish
+            - run: |
+                  if [ $CIRCLE_BRANCH = "master" ]
+                  then
+                      npm run release
+                  fi
 
 workflows:
     version: 2
