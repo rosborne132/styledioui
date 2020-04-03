@@ -10,7 +10,7 @@
         "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore test.js,stories.js,stories.mdx",
         "package:publish": "npm run build && npm publish --access public",
         "storybook": "start-storybook -p 9009 -s public",
-        "test": "react-scripts test"
+        "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test"
     },
     "dependencies": {
         "@babel/cli": "^7.5.5",

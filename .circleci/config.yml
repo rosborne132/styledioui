@@ -16,7 +16,7 @@ jobs:
                       - v1-dependencies-
             - run:
                   name: Install Dependencies
-                  command: npm install
+                  command: SKIP_PREFLIGHT_CHECK=true npm install
             - save_cache:
                   paths:
                       - node_modules
