@@ -23,12 +23,12 @@ jobs:
             - run:
                   name: Run Tests
                   command: npm run test
-            - run: |
-                  if [ $CIRCLE_BRANCH = "master" ]
-                  then
-                      npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-                      npm run release
-                  fi
+            # - run: |
+            #       if [ $CIRCLE_BRANCH = "master" ]
+            #       then
+            #           npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            #           npm run release
+            #       fi
     # deploy:
     #     <<: *defaults
     #     steps:
