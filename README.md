@@ -21,11 +21,3 @@ Run the command below to build and publish a new verison of the library
 ```
 npm run package:publish
 ```
-
-### Publish Demo Site
-
-Run the command below to build and publish the storybook site
-
-```
-npm run storybook:publish
-```

@@ -26,6 +26,7 @@ jobs:
             - run: |
                   if [ $CIRCLE_BRANCH = "master" ]
                   then
+                      npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
                       npm run release
                   fi
     # deploy:

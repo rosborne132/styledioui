@@ -3,10 +3,10 @@ import * as global from './shared/global'
 import * as animation from './shared/animation'
 import * as icons from './shared/icons'
 
-export { styles, global, animation, icons }
+import { Avatar } from './Elements/Avatar/Avatar'
+import { Badge } from './Elements/Badge/Badge'
+import { Button } from './Elements/Button/Button'
+import { Icon } from './Elements/Icon/Icon'
+import { Link } from './Elements/Link/Link'
 
-export * from '.Elements/Avatar/Avatar'
-export * from './Elements/Badge/Badge'
-export * from './Elements/Buttons/Button'
-export * from './Elements/Icon/Icon'
-export * from './Elements/Link/Link'
+export { animation, Avatar, Badge, Button, global, Icon, icons, Link, styles }
