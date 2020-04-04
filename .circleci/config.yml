@@ -42,7 +42,7 @@ jobs:
                       npm version minor
             - run:
                   name: Publish Package
-                  command: npm publish --access public
+                  command: npm run package:publish
 
 workflows:
     version: 2
