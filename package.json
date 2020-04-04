@@ -5,6 +5,7 @@
     "author": "Robert Osborne",
     "main": "dist/index.js",
     "license": "MIT",
+    "repository": "https://github.com/rosborne132/styledioui",
     "scripts": {
         "build-storybook": "build-storybook -c .storybook -o build",
         "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore test.js,stories.js,stories.mdx",
@@ -27,6 +28,7 @@
         "@storybook/addon-links": "^5.2.1",
         "@storybook/addon-storysource": "^5.2.1",
         "@storybook/addons": "^5.2.1",
+        "@storybook/preset-create-react-app": "^2.1.1",
         "@storybook/react": "^5.2.1",
         "@testing-library/react": "^9.5.0",
         "eslint": "^6.2.2",
@@ -53,10 +55,6 @@
     },
     "eslintConfig": {
         "extends": "react-app"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/rosborne132/styledioui"
     },
     "babel": {
         "presets": [
