@@ -33,11 +33,13 @@ jobs:
             - attach_workspace:
                   at: ~/repo
             - run:
-                  name: Authenticate with registry
+                  name: Authenticate With Registry
                   command: npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
             - run:
                   name: Bump Up Version Number
-                  command: npm version minor
+                  command: |
+                      git add . && git commit -m "Bump up version number"
+                      npm version minor
             - run:
                   name: Publish Package
                   command: npm publish --access public
