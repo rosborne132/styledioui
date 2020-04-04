@@ -16,7 +16,7 @@ jobs:
                       - v1-dependencies-
             - run:
                   name: Install Dependencies
-                  command: SKIP_PREFLIGHT_CHECK=true npm install
+                  command: npm install
             - save_cache:
                   paths:
                       - node_modules
@@ -34,7 +34,7 @@ jobs:
                   at: ~/repo
             - run:
                   name: Authenticate with registry
-                  command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > //registry.npmjs.org/:_authToken=$NPM_TOKEN
+                  command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
             - run:
                   name: Publish Package
                   command: npm publish --access public
