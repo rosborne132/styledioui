@@ -44,7 +44,7 @@ jobs:
                   name: Bump Up Version Number
                   command: |
                       git add . && git commit -m "Bump up version number"
-                      npm version minor
+                      npm version premajor
             - run:
                   name: Publish Package
                   command: npm run package:publish
