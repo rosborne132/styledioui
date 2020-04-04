@@ -40,6 +40,8 @@ jobs:
                   command: npm publish --access public
 
 workflows:
+    version: 2
+
     cd-pipeline:
         jobs:
             - build-and-test
