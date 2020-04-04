@@ -11,13 +11,3 @@ Run the command below to spin up storybook for local development.
 ```
 npm run storybook
 ```
-
-## Deployment
-
-### Publish Library to NPM
-
-Run the command below to build and publish a new verison of the library
-
-```
-npm run package:publish
-```
