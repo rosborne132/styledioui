@@ -17,6 +17,7 @@ describe('<Button />', () => {
         const { queryByTestId } = render(
             <Button {...defaultProps}>Test Button</Button>
         )
+
         expect(queryByTestId('button')).toBeTruthy()
     })
 
@@ -26,6 +27,7 @@ describe('<Button />', () => {
                 Disabled Button
             </Button>
         )
+
         expect(queryByTestId('button')).isDisabled
     })
 
@@ -35,6 +37,7 @@ describe('<Button />', () => {
                 Loading Button
             </Button>
         )
+
         expect(queryByTestId('button')).isDisabled
     })
 })

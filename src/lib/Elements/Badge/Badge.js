@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+
 import { background, color, typography } from '../../shared/styles'
 
 const BadgeWrapper = styled.div`
@@ -49,12 +50,10 @@ const BadgeWrapper = styled.div`
         `};
 `
 
-/**
- * **Badges?!** We don't need no stinkin' badges!!
- */
-export function Badge({ ...props }) {
-    return <BadgeWrapper {...props} />
-}
+export const Badge = ({ ...props }) => (
+    <BadgeWrapper {...props} data-testid="badge" />
+)
+
 Badge.propTypes = {
     status: PropTypes.oneOf([
         'positive',

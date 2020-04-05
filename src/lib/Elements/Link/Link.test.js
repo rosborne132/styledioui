@@ -7,6 +7,7 @@ describe('<Link />', () => {
 
     test('renders link component', () => {
         const { queryByTestId } = render(<Link>Test Button</Link>)
+
         expect(queryByTestId('link')).toBeTruthy()
     })
 })
