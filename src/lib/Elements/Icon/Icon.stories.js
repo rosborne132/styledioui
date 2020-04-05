@@ -16,7 +16,7 @@ const Item = styled.li`
     align-items: center;
     flex: 0 1 20%;
     min-width: 120px;
-    padding: 20px;
+    padding: 3px;
     ${props =>
         props.minimal &&
         css`
