@@ -3,7 +3,7 @@ import { cleanup, render, fireEvent } from '@testing-library/react'
 
 import { Icon } from './Icon'
 
-describe('<FormInput />', () => {
+describe('<Icon />', () => {
     afterEach(cleanup)
     let defaultProps
 
