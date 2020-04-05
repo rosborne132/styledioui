@@ -6,17 +6,18 @@ import { spacing, typography } from '../../shared/styles'
 
 const Input = styled.input`
     background-color: #fff;
-    border: 1px solid #dbdbdb;
     border-radius: ${spacing.borderRadius.small}px;
-    font-size: ${typography.size.s3}px;
+    border: 1px solid #dbdbdb;
+    color: #dbdbdb;
     font-family: ${typography.type.primary};
-    padding: ${spacing.padding.small}px;
-    color: inherit;
+    font-size: ${typography.size.s3}px;
     max-width: 100%;
+    padding: ${spacing.padding.small}px;
     width: 100%;
 `
 
 const Label = styled.label`
+    color: #dbdbdb;
     font-size: ${typography.size.s3}px;
     font-family: ${typography.type.primary};
 `
@@ -40,15 +41,15 @@ export const FormInput = ({
         <div className={inputClassName}>
             {label && <Label htmlFor={name}>{label}</Label>}
             <Input
+                className={className}
                 data-testid="formInput"
                 id={name}
                 name={name}
-                type={type}
-                placeholder={placeholder}
                 onChange={onChange}
-                value={value}
-                className={className}
+                placeholder={placeholder}
                 style={error ? { border: 'solid 1px red' } : {}}
+                type={type}
+                value={value}
             />
             {error && <Error data-testid="formError">{error}</Error>}
         </div>
