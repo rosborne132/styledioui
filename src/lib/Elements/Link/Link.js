@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { darken } from 'polished'
@@ -127,35 +127,38 @@ const LinkButton = styled.button`
     ${linkStyles};
 `
 
-const applyStyle = LinkWrapper => {
-    return (
-        LinkWrapper &&
-        styled(
-            ({
-                containsIcon,
-                inverse,
-                nochrome,
-                secondary,
-                tertiary,
-                ...linkWrapperRest
-            }) => <LinkWrapper {...linkWrapperRest} />
-        )`
-            ${linkStyles};
-        `
-    )
-}
+const applyStyle = LinkWrapper =>
+    LinkWrapper &&
+    styled(
+        ({
+            containsIcon,
+            inverse,
+            nochrome,
+            secondary,
+            tertiary,
+            ...linkWrapperRest
+        }) => <LinkWrapper {...linkWrapperRest} />
+    )`
+        ${linkStyles};
+    `
 
 /**
  * Links can contains text and/or icons. Be careful using only icons, you must provide a text alternative via aria-label for accessibility.
  */
-export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }) {
+export const Link = ({
+    isButton,
+    withArrow,
+    LinkWrapper,
+    children,
+    ...rest
+}) => {
     const content = (
-        <Fragment>
+        <React.Fragment>
             <LinkInner withArrow={withArrow}>
                 {children}
                 {withArrow && <Icon icon="arrowright" />}
             </LinkInner>
-        </Fragment>
+        </React.Fragment>
     )
 
     const StyledLinkWrapper = applyStyle(LinkWrapper)
@@ -167,7 +170,11 @@ export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }) {
         SelectedLink = LinkButton
     }
 
-    return <SelectedLink {...rest}>{content}</SelectedLink>
+    return (
+        <SelectedLink {...rest} data-testid="link">
+            {content}
+        </SelectedLink>
+    )
 }
 
 Link.propTypes = {
