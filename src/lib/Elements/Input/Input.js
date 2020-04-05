@@ -8,7 +8,7 @@ const Input = styled.input`
     background-color: #fff;
     border-radius: ${spacing.borderRadius.small}px;
     border: 1px solid #dbdbdb;
-    color: #dbdbdb;
+    color: #000;
     font-family: ${typography.type.primary};
     font-size: ${typography.size.s3}px;
     max-width: 100%;
@@ -17,7 +17,7 @@ const Input = styled.input`
 `
 
 const Label = styled.label`
-    color: #dbdbdb;
+    color: #000;
     font-size: ${typography.size.s3}px;
     font-family: ${typography.type.primary};
 `

@@ -1,6 +1,6 @@
 {
     "name": "styledoui",
-    "version": "0.1.18",
+    "version": "0.1.19",
     "description": "Personal design system",
     "author": "Robert Osborne",
     "main": "dist/index.js",
