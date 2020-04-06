@@ -25,7 +25,9 @@ export const Icon = ({ block = false, icon, size = 'm1', ...props }) => (
         block={block}
         {...props}
     >
-        <Path d={icons[icon]} />
+        {icons[icon].map(path => (
+            <Path d={path} />
+        ))}
     </Svg>
 )
 

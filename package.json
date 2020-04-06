@@ -1,6 +1,6 @@
 {
     "name": "styledoui",
-    "version": "0.1.19",
+    "version": "0.1.2",
     "description": "Personal design system",
     "author": "Robert Osborne",
     "main": "dist/index.js",
@@ -8,7 +8,7 @@
     "repository": "https://github.com/rosborne132/styledioui",
     "scripts": {
         "build-storybook": "build-storybook -c .storybook -o build",
-        "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore test.js,stories.js,stories.mdx",
+        "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore test.js,stories.js",
         "package:publish": "npm run build && npm publish --access public",
         "storybook": "start-storybook -p 9009 -s public",
         "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test"
@@ -38,7 +38,6 @@
         "eslint-loader": "^3.0.0",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-jsx-a11y": "^6.2.3",
-        "eslint-plugin-mdx": "^1.6.8",
         "eslint-plugin-react": "^7.14.3",
         "eslint-plugin-react-hooks": "^2.0.1",
         "husky": "^3.1.0",
@@ -50,7 +49,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "pretty-quick --staged --pattern '**/*.*(js|mdx)'"
+            "pre-commit": "pretty-quick --staged --pattern '**/*.*js'"
         }
     },
     "eslintConfig": {
