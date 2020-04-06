@@ -1,6 +1,6 @@
 {
     "name": "styledoui",
-    "version": "0.1.21",
+    "version": "0.1.22",
     "description": "Personal design system",
     "author": "Robert Osborne",
     "main": "dist/index.js",
@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "@babel/cli": "^7.5.5",
+        "@babel/runtime": "^7.9.2",
         "@testing-library/jest-dom": "^4.2.4",
         "polished": "^3.5.1",
         "prop-types": "^15.7.2",
@@ -57,7 +58,10 @@
     },
     "babel": {
         "presets": [
-            "react-app"
+            "react-app",
+            {
+                "absoluteRuntime": false
+            }
         ]
     }
 }
