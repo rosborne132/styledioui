@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import { withKnobs, boolean, select } from '@storybook/addon-knobs'
 
 import { Icon } from './Icon'
 import { icons } from '../../shared/icons'
@@ -40,13 +40,20 @@ export default {
     decorators: [withKnobs]
 }
 
-export const labels = () => (
+export const allIcons = () => (
     <Fragment>
         There are {Object.keys(icons).length} icons
         <List>
             {Object.keys(icons).map(key => (
                 <Item key={key}>
-                    <Icon icon={key} aria-hidden />
+                    <Icon
+                        icon={key}
+                        size="l3"
+                        aria-hidden
+                        style={{
+                            color: select('Color', ['black', 'blue', 'green'])
+                        }}
+                    />
                     <Key>{key}</Key>
                 </Item>
             ))}
@@ -54,18 +61,101 @@ export const labels = () => (
     </Fragment>
 )
 
-export const noLabels = () => (
-    <List>
-        {Object.keys(icons).map(key => (
-            <Item minimal key={key}>
-                <Icon icon={key} size="l2" aria-label={key} />
-            </Item>
-        ))}
-    </List>
-)
+export const tech = () => {
+    const tech = [
+        'auth0',
+        'aws',
+        'babel',
+        'code',
+        'css3',
+        'dynamodb',
+        'express',
+        'graphql',
+        'heroku',
+        'html',
+        'javascript',
+        'jquery',
+        'nextjs',
+        'node',
+        'npm',
+        'postgresql',
+        'react',
+        'redux',
+        's3',
+        'storybook',
+        'typescript'
+    ]
 
-noLabels.story = {
-    name: 'No Labels'
+    return (
+        <List>
+            {Object.keys(icons).map(key => {
+                if (!tech.includes(key)) {
+                    return null
+                }
+
+                return (
+                    <Item key={key}>
+                        <Icon
+                            icon={key}
+                            size="l3"
+                            aria-hidden
+                            style={{
+                                color: select('Color', [
+                                    'black',
+                                    'blue',
+                                    'green'
+                                ])
+                            }}
+                        />
+                        <Key>{key}</Key>
+                    </Item>
+                )
+            })}
+        </List>
+    )
+}
+
+export const social = () => {
+    const social = [
+        'dev',
+        'discord',
+        'facebook',
+        'github',
+        'gitlab',
+        'instagram',
+        'linkedin',
+        'medium',
+        'twitter',
+        'youtube'
+    ]
+
+    return (
+        <List>
+            {Object.keys(icons).map(key => {
+                if (!social.includes(key)) {
+                    return null
+                }
+
+                return (
+                    <Item key={key}>
+                        <Icon
+                            icon={key}
+                            size="l3"
+                            aria-hidden
+                            style={{
+                                color: select('Color', [
+                                    'black',
+                                    'blue',
+                                    'green'
+                                ])
+                            }}
+                        />
+                        <Key>{key}</Key>
+                    </Item>
+                )
+            })}
+        </List>
+    )
 }
 
 export const inline = () => (

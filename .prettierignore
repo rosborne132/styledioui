@@ -2,4 +2,3 @@
 /build
 /dist
 /storybook-static
-/src/lib/**/*.mdx
