@@ -8,7 +8,7 @@
     "repository": "https://github.com/rosborne132/styledioui",
     "scripts": {
         "build-storybook": "build-storybook -c .storybook -o build",
-        "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore test.js,stories.js",
+        "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --ignore src/lib/index.stories.js,src/lib/Elements/**/*.test.js,src/lib/Elements/**/*.stories.js",
         "package:publish": "npm run build && npm publish --access public",
         "storybook": "start-storybook -p 9009 -s public",
         "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test"
