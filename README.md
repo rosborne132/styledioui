@@ -2,8 +2,7 @@
 
 A component library used to speed up development of new applications.
 
-Visit our demo page: [Link](https://styledoui.now.sh)
-Visit our npm page: [Link](https://www.npmjs.com/package/styledoui)
+Visits our pages: [Demo](https://styledoui.now.sh) | [Package](https://www.npmjs.com/package/styledoui)
 
 ## Local Development
 
