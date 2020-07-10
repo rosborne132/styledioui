@@ -14,8 +14,8 @@
         "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test"
     },
     "dependencies": {
-        "@babel/cli": "^7.5.5",
-        "@babel/runtime": "^7.9.2",
+        "@babel/cli": "^7.10.1",
+        "@babel/runtime": "^7.10.2",
         "@testing-library/jest-dom": "^4.2.4",
         "polished": "^3.5.1",
         "prop-types": "^15.7.2",
