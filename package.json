@@ -16,10 +16,10 @@
     "dependencies": {
         "@babel/cli": "^7.5.5",
         "@babel/runtime": "^7.9.2",
-        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/jest-dom": "^6.4.3",
         "polished": "^3.5.1",
         "prop-types": "^15.7.2",
-        "styled-components": "^5.0.1"
+        "styled-components": "^6.1.0"
     },
     "devDependencies": {
         "@storybook/addon-a11y": "^5.2.1",
